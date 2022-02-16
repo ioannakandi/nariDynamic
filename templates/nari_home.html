@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Nari - Marine Data</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-dark  sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="nari_home.html">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-ship"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">Nari Ships <sub>Maritime Data</sub></div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item active">
+                <a class="nav-link" href="nari_home.html">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+
+
+
+
+                        <div class="topbar-divider d-none d-sm-block"></div>
+
+
+
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+                    </div>
+
+                    <form style="width:90%; margin:auto;" id="query1">
+                    <h4 class="h2-responsive" style="text-align:center;">Vessel Details Search </h4>
+                      <br>
+                    <div class="row">
+
+                        <div class="col-md-14 mx-auto">
+
+                                <div class="form-group row" style="text-align:center;">
+                                    <div class="col-sm-13">
+                                        <label for="firstname">Vessel Code</label>
+                                        <input type="text" style="text-align:center;" class="form-control" id="sourcemmsi1" name="sourcemmsi1" placeholder="sourcemmsi1" required>
+                                    </div>
+                                </div>
+
+
+
+
+                                            <button id ="button1" type="submit" class="btn btn-primary px-4 float-right">Search</button>
+
+                                    </div>
+                                </div>
+                      </form>
+
+                      <br><br>
+                      <form id="query2">
+                      <h4 class="h2-responsive" style="text-align:center;">Speed-Based Search </h4>
+
+                      <br>
+                      <div class="row">
+                          <div class="col-md-14 mx-auto">
+
+                                  <div class="form-group row" style="text-align:center;">
+                                      <div class="col-sm-6">
+                                          <label for="firstname">Knots</label>
+                                          <input type="text" style="text-align:center;" class="form-control" id="speedoverground1" name="speedoverground1" placeholder="speedoverground1" required>
+                                      </div>
+
+
+
+                                      <div class="col-sm-6">
+                                          <label for="firstname">Time</label>
+                                          <input type="text" style="text-align:center;" class="form-control" id="t1" name="t1" placeholder="t1" required>
+                                      </div>
+                                  </div>
+
+
+                                              <button id ="button1" type="submit" class="btn btn-primary px-4 float-right">Search</button>
+
+                                      </div>
+                                  </div>
+
+                        </form>
+
+                         <br><br>
+                         <form id="query3">
+                         <h4 class="h2-responsive" style="text-align:center;">Vessel Route Search </h4>
+                           <br>
+                         <div class="row">
+                             <div class="col-md-14 mx-auto">
+
+                                     <div class="form-group row" style="text-align:center;">
+                                         <div class="col-sm-13">
+                                             <label for="firstname">Vessel Code</label>
+                                             <input type="text" style="text-align:center;" class="form-control" id="sourcemmsi2" name="sourcemmsi2" placeholder="sourcemmsi2" required>
+                                         </div>
+                                     </div>
+
+
+
+
+                                                 <button id ="button1" type="submit" class="btn btn-primary px-4 float-right">Search</button>
+
+                                      </div>
+                            </div>
+                         </form>
+
+                        <br><br>
+                        <form id="query4">
+                        <h4 class="h2-responsive" style="text-align:center;">Position-Based Search </h4> <!---vessels' distance from given coordinates -->
+
+                        <br>
+                        <div class="row">
+                            <div class="col-md-14 mx-auto">
+
+                                    <div class="form-group row" style="text-align:center;">
+                                        <div class="col-sm-6">
+                                            <label for="firstname">Longtitude</label>
+                                            <input type="text" style="text-align:center;" class="form-control" id="lon1" name="lon1" placeholder="lon1" required>
+                                        </div>
+
+
+
+                                        <div class="col-sm-6">
+                                            <label for="firstname">Latitude</label>
+                                            <input type="text" style="text-align:center;" class="form-control" id="lat1" name="lat1" placeholder="lat1" required>
+                                        </div>
+                                    </div>
+
+
+                                                <button id ="button1" type="submit" class="btn btn-primary px-4 float-right">Search</button>
+
+                                        </div>
+                                    </div>
+
+                          </form>
+                        </div>
+                    </div>
+
+
+                    <div style="text-align:center; padding-top:2%; padding-bottom:2%;">
+                      <h4 class="h2-responsive">Details</h4>
+
+                    </div>
+                    <!-- details table. It will automatically fill
+                    with info regarding the queries above once executed-->
+                    <div class="table-responsive">
+                        <table id="vesselDetailsTable" class="table table-hover">
+                          <thead>
+                            <tr>
+                              <th>VesselMmsi</th>
+                              <th>NavigationalStatus</th>
+                              <th>RateOfTurn</th>
+                              <th>SpeedOverGround</th>
+                              <th>CourseOverGround</th>
+                              <th>TrueHeading</th>
+                              <th>Longtitude</th>
+                              <th>Latitude</th>
+                              <th>t</th>
+                            </tr>
+                          </thead>
+                          <tbody></tbody>
+                        </table>
+                      </div
+
+
+                    <br>
+                    <br>
+
+
+
+
+
+
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Ioanna Kandi me2136 2022</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/chart-area-demo.js"></script>
+    <script src="js/demo/chart-pie-demo.js"></script>
+
+
+
+    <script>
+
+
+  //Vessel Details - query1 execution. Requesting vessel details from back-end.
+  $("#query1").submit(function(e) {
+      //prevent Default functionality
+      e.preventDefault();
+      let sourcemmsi = $("#sourcemmsi1").val();
+
+
+     $.get(
+        "http://localhost:5000/vesselSearch", //endpoint executing query1
+      {
+        sourcemmsi:sourcemmsi,
+      })
+        .done(function (response) {
+          console.log(response);
+    for (var vessel of response)
+         {
+             // table filling
+             var markup = `<tr>
+               <td class="align-middle">${vessel.sourcemmsi}</td>
+               <td class="align-middle">${vessel.navigationalstatus}</td>
+               <td class="align-middle">${vessel.rateofturn}</td>
+               <td class="align-middle">${vessel.speedoverground}</td>
+               <td class="align-middle">${vessel.courseoverground}</td>
+               <td class="align-middle">${vessel.trueheading}</td>
+               <td class="align-middle">${vessel.lon}</td>
+               <td class="align-middle">${vessel.lat}</td>
+               <td class="align-middle">${vessel.t}</td>
+               </tr>`;
+               $("#vesselDetailsTable tbody").append(markup);
+
+         }
+
+
+        })
+        .fail(function (response) {
+          window.alert(response.message);
+        });
+  });
+
+  //Speed-based Search - query2 execution. Requesting speedoverground details from back-end.
+  $("#query2").submit(function(e) {
+      //prevent Default functionality
+      e.preventDefault();
+      let speedoverground = $("#speedoverground1").val();
+      let t = $("#t1").val();
+
+     $.get(
+        "http://localhost:5000/knotSearch", //endpoint executing query2
+      {
+        speedoverground:speedoverground,
+        t:t,
+      })
+        .done(function (response) {
+          console.log(response);
+    for (var vessel of response)
+         {
+             //fill in the details table, but only the sourcemmsi and speedoverground fields
+             //because these are the only ones needed
+             var markup = `<tr>
+             <td class="align-middle">${vessel.sourcemmsi}</td>
+             <td class="align-middle">-</td>
+             <td class="align-middle">-</td>
+             <td class="align-middle">${vessel.speedoverground}</td>
+             <td class="align-middle">-</td>
+             <td class="align-middle">-</td>
+             <td class="align-middle">-</td>
+             <td class="align-middle">-</td>
+             <td class="align-middle">-</td>
+
+               </tr>`;
+               $("#vesselDetailsTable tbody").append(markup);
+
+         }
+
+
+        })
+        .fail(function (response) {
+          //if the response status is 500 (meaning that something is wrong), the following will be executed
+          //it just shows an alert with the response from the back-end
+          window.alert(response.message);
+        });
+  });
+
+
+  //Vessel course/route - query3 execution. Requesting vessel details from back-end.
+  $("#query3").submit(function(e) {
+      //prevent Default functionality
+      e.preventDefault();
+      let sourcemmsi = $("#sourcemmsi2").val();
+
+
+     $.get(
+        "http://localhost:5000/getCourse", //endpoint executing query3
+      {
+        sourcemmsi:sourcemmsi,
+      })
+        .done(function (response) {
+          console.log(response);
+    for (var vessel of response)
+         {
+             // table filling  but only the sourcemmsi, courseoverground, trueheading and t(time) fields
+            //because these are the only ones needed
+             var markup = `<tr>
+               <td class="align-middle">${vessel.sourcemmsi}</td>
+               <td class="align-middle">-</td>
+               <td class="align-middle">-</td>
+               <td class="align-middle">-</td>
+               <td class="align-middle">${vessel.courseoverground}</td>
+               <td class="align-middle">${vessel.trueheading}</td>
+               <td class="align-middle">-</td>
+               <td class="align-middle">-</td>
+               <td class="align-middle">${vessel.t}</td>
+               </tr>`;
+               $("#vesselDetailsTable tbody").append(markup);
+
+         }
+
+
+        })
+        .fail(function (response) {
+          window.alert(response.message);
+        });
+  });
+
+
+  //Position-based search - query4 execution. Requesting vessel details from back-end.
+  $("#query4").submit(function(e) {
+      //prevent Default functionality
+      e.preventDefault();
+      let lon = $("#lon1").val();
+      let lat = $("#lat1").val();
+
+     $.get(
+        "http://localhost:5000/vesselLocation", //endpoint executing  query4
+      {
+        lon:lon,
+        lat:lat,
+      })
+        .done(function (response) {
+          console.log(response);
+    for (var vessel of response)
+         {
+             // table filling , but only the sourcemmsi,speedoverground, courseoverground and trueheading fields
+              //because these are the only ones needed
+             var markup = `<tr>
+               <td class="align-middle">${vessel.sourcemmsi}</td>
+               <td class="align-middle">-</td>
+               <td class="align-middle">-</td>
+               <td class="align-middle">${vessel.speedoverground}</td>
+               <td class="align-middle">${vessel.courseoverground}</td>
+               <td class="align-middle">${vessel.trueheading}</td>
+               <td class="align-middle">-</td>
+               <td class="align-middle">-</td>
+               <td class="align-middle">-</td>
+               </tr>`;
+               $("#vesselDetailsTable tbody").append(markup);
+
+         }
+
+
+        })
+        .fail(function (response) {
+          window.alert(response.message);
+        });
+  });
+
+
+
+  </script>
+
+</body>
+
+</html>
